@@ -57,7 +57,7 @@ pandas==2.1.4
 parso==0.8.3
 passlib==1.7.4
 pexpect==4.9.0
-prompt-toolkit==3.0.41
+prompt-toolkit==3.0.42
 psutil==5.9.6
 ptyprocess==0.7.0
 pure-eval==0.2.2
@@ -87,7 +87,7 @@ stack-data==0.6.3
 starlette==0.27.0
 threadpoolctl==3.2.0
 traitlets==5.14.0
-typing_extensions==4.8.0
+typing_extensions==4.9.0
 tzdata==2023.3
 urllib3==2.1.0
 uvicorn==0.24.0.post1
@@ -99,4 +99,4 @@ websocket-client==1.7.0
 websockets==12.0
 widgetsnbextension==4.0.9
 yarl==1.9.4
-zenml==0.50.0
+zenml==0.51.0

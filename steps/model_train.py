@@ -1,13 +1,18 @@
 import logging
 import pandas as pd 
 
+import mlflow
 from zenml import step
 from src.model_develop import Model, DecisionClassifierTree
 from sklearn.base import ClassifierMixin
 # pylint: disable=relative-beyond-top-level
 from .config import ModelNameConfig
 
-@step
+from zenml.client import Client
+
+experiment_tracker = Client().active_stack.experiment_tracker
+
+@step(experiment_tracker=experiment_tracker.name)
 def train_model(
     X_train: pd.DataFrame,
     X_test: pd.DataFrame,
@@ -26,6 +31,7 @@ def train_model(
     try:
       model = None
       if config.model_name == "DecisionTreeClassifier":
+            mlflow.sklearn.autolog()
             model = DecisionClassifierTree()
             trained_model = model.train(X_train,y_train)
             return trained_model
